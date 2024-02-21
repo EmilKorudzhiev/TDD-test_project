@@ -1,4 +1,5 @@
 import dev.emilkorudzhiev.user.User;
+import dev.emilkorudzhiev.user.UserAuth;
 import dev.emilkorudzhiev.user.UserManagement;
 import org.junit.jupiter.api.Test;
 
@@ -19,9 +20,10 @@ public class UserManagementTests {
     @Test
     public void testLogin() {
         UserManagement userManagement = new UserManagement();
+        UserAuth userAuth = new UserAuth();
         User user = new User("test_user", "password");
         userManagement.addUser(user);
-        assertTrue(userManagement.login("test_user", "password"));
+        assertTrue(userAuth.login("test_user", "password"));
     }
 
     @Test
